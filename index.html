@@ -11,17 +11,8 @@
 
   <body>
     <form class="form" action="">
-      <input
-        type="text"
-        id="numero"
-        name="numero"
-        required
-        inputmode="numeric"
-        pattern="[0-9]+"
-        autocorrect="off"
-        autocapitalize="none"
-      />
-      <label for="numero" class="lbl-nombre">
+      <input type="text" id="numero" name="nombre" required />
+      <label for="nombre" class="lbl-nombre">
         <span class="text-nomb">Item</span>
       </label>
       <label class="lbl-boton">
@@ -30,11 +21,5 @@
     </form>
 
     <script src="script.js"></script>
-    <script>
-      const numeroInput = document.getElementById("numero");
-      numeroInput.addEventListener("input", () => {
-        numeroInput.value = numeroInput.value.replace(/[\s-]/g, "");
-      });
-    </script>
   </body>
 </html>
