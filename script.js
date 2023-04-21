@@ -23,10 +23,12 @@ function concatenar() {
   
   // verifica que solo se ingresen números y no espacios en blanco
   const input = document.getElementById("numero");
-  input.addEventListener("keypress", function (event) {
-    const key = event.key;
-    if (key !== "Enter" && key !== "Backspace" && key !== "Delete" && isNaN(key) || /\s/.test(key)) {
-      event.preventDefault();
+  input.addEventListener("input", function (event) {
+    const value = event.target.value;
+    const newValue = value.replace(/\s+/g, '');
+    if (newValue !== value) {
+      event.target.value = newValue;
     }
   });
+  
   
