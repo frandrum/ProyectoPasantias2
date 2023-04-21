@@ -23,12 +23,17 @@ function concatenar() {
   
   // verifica que solo se ingresen números y no espacios en blanco
   const input = document.getElementById("numero");
+  let timeoutId;
+  
   input.addEventListener("input", function (event) {
+    clearTimeout(timeoutId);
     const value = event.target.value;
     const newValue = value.replace(/\s+/g, '');
     if (newValue !== value) {
       event.target.value = newValue;
     }
+    timeoutId = setTimeout(function () {
+      // desactivar el micrófono aquí
+    }, 2000);
   });
-  
   
