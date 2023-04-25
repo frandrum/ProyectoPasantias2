@@ -15,14 +15,13 @@ function concatenar() {
   input.value = "";
 }
 
-const input = document.getElementById("numero");
-input.addEventListener("keydown", function(event) {
-  if (event.keyCode === 13 || event.keyCode === 14) { // 13 = Enter, 14 = Ir (en teclado numérico)
-    event.preventDefault();
-    concatenar();
-  }
+document.addEventListener("DOMContentLoaded", function() {
+  const input = document.getElementById("numero");
+  input.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      const touchEvent = new TouchEvent("touchstart");
+      document.querySelector(".boton").dispatchEvent(touchEvent);
+    }
+  });
 });
-input.addEventListener("search", function(event) {
-  concatenar();
-});
-
